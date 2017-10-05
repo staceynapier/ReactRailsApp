@@ -34,7 +34,7 @@ class App extends Component {
           <h1 className="App-title"></h1>
         </header>
         <section>
-          {/* <PropList properties={this.state.properties} /> */}
+          <PropList properties={this.state.properties} />
         </section>
 
       </main>
