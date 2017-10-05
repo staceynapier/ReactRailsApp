@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import Prop from './Prop'
+import React from 'react';
+import Property from './Property'
 
 const PropList = (props) => {
 
-  const list = props.properties.map( (property) => {
+  const list = props.properties.map( (property, index) => {
     return (
-      <Property />
+      <Property property={property} key={index}/>
     )
   })
 

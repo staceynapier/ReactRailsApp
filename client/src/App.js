@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import PropList from './PropList'
 
@@ -30,9 +29,7 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <header className="App-header">
-          <h1 className="App-title"></h1>
-        </header>
+  
         <section>
           <PropList properties={this.state.properties} />
         </section>
