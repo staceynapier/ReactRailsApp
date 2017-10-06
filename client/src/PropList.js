@@ -1,20 +1,25 @@
 import React from 'react';
 import Property from './Property'
 
-const PropList = (props) => {
+class PropList extends React.Component {
 
-  const list = props.properties.map( (property, index) => {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    const list = this.props.properties.map( (property, index) => {
+      return (
+        <Property property={property} key={index} handlePropClick={this.props.handlePropClick}/>
+      )
+    })
+
     return (
-      <Property property={property} key={index}/>
+      <ul>
+        { list }
+      </ul>
     )
-  })
-
-  return (
-    <ul>
-      {list}
-    </ul>
-  )
-
+  }
 }
 
 export default PropList;
