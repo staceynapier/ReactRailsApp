@@ -9,9 +9,14 @@ class Details extends React.Component {
           alt="Property"
           src={this.props.property.images}
         />
-        <h4>
-          {this.props.property.location}
-        </h4>
+        <h2>{this.props.property.location}</h2><br/>
+        <h4>Price: {this.props.property.price}</h4>
+        <p>Bedrooms: {this.props.property.bedrooms}</p>
+        <p>Bathrooms: {this.props.property.bathrooms}</p>
+        <p>Public Rooms: {this.props.property.publicRooms}</p>
+        <p>Furnished: {this.props.property.furnished}</p>
+        <p>Available From: {this.props.property.availableFrom}</p>
+        <p>{this.props.property.description}</p>
       </section>
     )
   }

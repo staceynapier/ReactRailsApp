@@ -23,7 +23,9 @@ class Property extends React.Component {
           onClick={this.handlePropClick}
         />
         <h2>{this.props.property.location}</h2>
-        <p>{this.props.property.description}</p>
+        <p>Bedrooms: {this.props.property.bedrooms}</p>
+        <p>Bathrooms: {this.props.property.bathrooms}</p>
+        <p>Price: {this.props.property.price}</p>
       </article>
     )
   }

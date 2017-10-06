@@ -54,7 +54,6 @@ class App extends React.Component {
 
         </section>
         <section className="prop-list">
-
             { nodeToDisplay }
         </section>
       </main>
