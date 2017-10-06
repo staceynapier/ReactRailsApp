@@ -32,7 +32,7 @@ class App extends React.Component {
 
   handlePropClick(property) {
     this.setState({selectedProperty: property})
-    console.log(this.state.selectedProperty);
+    this.render()
   }
 
   render() {
@@ -43,7 +43,7 @@ class App extends React.Component {
     let nodeToDisplay = {}
 
     if (this.state.selectedProperty !== null) {
-        nodeToDisplay = <Details />
+      nodeToDisplay = <Details property={this.state.selectedProperty}/>
     } else {
       nodeToDisplay = <PropList properties={this.state.properties} handlePropClick={this.handlePropClick}/>
     }
