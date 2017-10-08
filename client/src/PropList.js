@@ -5,10 +5,6 @@ import './PropList.css';
 
 class PropList extends React.Component {
 
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const list = this.props.properties.map( (property, index) => {
       return (

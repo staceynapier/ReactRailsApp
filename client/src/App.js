@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import PropList from './PropList'
 import Details from './Details.js'
+import Navigation from './Navigation'
 
 
 class App extends React.Component {
@@ -13,6 +14,7 @@ class App extends React.Component {
       selectedProperty: null
     }
     this.handlePropClick = this.handlePropClick.bind(this)
+    this.handleNavClick = this.handleNavClick.bind(this)
   }
 
   componentDidMount(){
@@ -32,7 +34,10 @@ class App extends React.Component {
 
   handlePropClick(property) {
     this.setState({selectedProperty: property})
-    this.render()
+  }
+
+  handleNavClick() {
+    this.setState({selectedProperty: null})
   }
 
   render() {
@@ -50,8 +55,9 @@ class App extends React.Component {
 
     return (
       <main className="App">
+        <h2>Title</h2>
         <section className="navigation">
-
+          <Navigation handleNavClick={this.handleNavClick}/>
         </section>
         <section className="prop-list">
             { nodeToDisplay }

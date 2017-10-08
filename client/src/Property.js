@@ -1,5 +1,4 @@
 import React from 'react';
-import Details from './Details.js'
 import './PropList.css';
 
 class Property extends React.Component {
