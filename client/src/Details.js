@@ -1,4 +1,6 @@
 import React from 'react';
+import './Details.css';
+
 
 class Details extends React.Component {
 
@@ -8,6 +10,7 @@ class Details extends React.Component {
         <img
           alt="Property"
           src={this.props.property.images}
+          className="detail-image"
         />
         <h2>{this.props.property.location}</h2><br/>
         <h4>Price: {this.props.property.price}</h4>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Details from './Details.js'
-
+import './PropList.css';
 
 class Property extends React.Component {
 
@@ -18,6 +18,7 @@ class Property extends React.Component {
     return (
       <article>
         <img
+          className="list-image"
           alt="Property"
           src={this.props.property.images}
           onClick={this.handlePropClick}

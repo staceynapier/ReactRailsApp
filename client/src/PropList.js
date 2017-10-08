@@ -1,5 +1,7 @@
 import React from 'react';
 import Property from './Property'
+import './PropList.css';
+
 
 class PropList extends React.Component {
 
