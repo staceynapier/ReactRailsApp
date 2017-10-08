@@ -3,6 +3,7 @@ import './App.css';
 import PropList from './PropList'
 import Details from './Details.js'
 import Navigation from './Navigation'
+import Contact from './Contact'
 
 
 class App extends React.Component {
@@ -11,10 +12,12 @@ class App extends React.Component {
     super()
     this.state = {
       properties: [],
-      selectedProperty: null
+      selectedProperty: null,
+      contact: false
     }
     this.handlePropClick = this.handlePropClick.bind(this)
     this.handleNavClick = this.handleNavClick.bind(this)
+    this.handleContactClick = this.handleContactClick.bind(this)
   }
 
   componentDidMount(){
@@ -37,15 +40,26 @@ class App extends React.Component {
   }
 
   handleNavClick() {
-    this.setState({selectedProperty: null})
+    this.setState({
+      selectedProperty: null,
+      contact: false
+    })
+  }
+
+  handleContactClick() {
+    this.setState({
+      selectedProperty: null,
+      contact: true
+    })
   }
 
   render() {
 
-    // logic here to check if selectedProperty is null or not
-    // if it is null, display PropList component
-    // else deisplay Details component
     let nodeToDisplay = {}
+
+    if (this.state.contact === true) {
+      nodeToDisplay = <Contact />
+    } else
 
     if (this.state.selectedProperty !== null) {
       nodeToDisplay = <Details property={this.state.selectedProperty}/>
@@ -57,7 +71,7 @@ class App extends React.Component {
       <main className="App">
         <h2>Title</h2>
         <section className="navigation">
-          <Navigation handleNavClick={this.handleNavClick}/>
+          <Navigation handleNavClick={this.handleNavClick} handleContactClick={this.handleContactClick}/>
         </section>
         <section className="prop-list">
             { nodeToDisplay }

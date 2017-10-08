@@ -14,7 +14,11 @@ class Navigation extends React.Component {
   handleSelect(selectedKey) {
     console.log(selectedKey);
     this.setState({activeKey: selectedKey})
-    this.props.handleNavClick()
+    if (selectedKey === 2) {
+      this.props.handleContactClick()
+    } else {
+      this.props.handleNavClick()
+    }
   }
 
   render() {
