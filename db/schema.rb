@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005122136) do
+ActiveRecord::Schema.define(version: 20171008154400) do
+
+  create_table "images", force: :cascade do |t|
+    t.string   "address"
+    t.integer  "property_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "images", ["property_id"], name: "index_images_on_property_id"
 
   create_table "properties", force: :cascade do |t|
     t.string   "location"
@@ -22,7 +31,6 @@ ActiveRecord::Schema.define(version: 20171005122136) do
     t.string   "description"
     t.string   "furnished"
     t.datetime "availableFrom"
-    t.string   "images"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

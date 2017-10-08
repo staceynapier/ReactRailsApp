@@ -15,12 +15,12 @@ class Property extends React.Component {
 
   render(props) {
     return (
-      <article>
+      <article onClick={this.handlePropClick}>
         <img
           className="list-image"
           alt="Property"
           src={this.props.property.images}
-          onClick={this.handlePropClick}
+
         />
         <h2>{this.props.property.location}</h2>
         <p>Bedrooms: {this.props.property.bedrooms}</p>

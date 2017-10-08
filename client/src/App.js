@@ -12,6 +12,7 @@ class App extends React.Component {
     super()
     this.state = {
       properties: [],
+      images: [],
       selectedProperty: null,
       contact: false
     }
@@ -20,7 +21,7 @@ class App extends React.Component {
     this.handleContactClick = this.handleContactClick.bind(this)
   }
 
-  componentDidMount(){
+  componentDidMount() {
     const xml = new XMLHttpRequest();
     xml.open("GET", "http://localhost:5000/properties");
     xml.addEventListener('load', () => {
@@ -34,6 +35,7 @@ class App extends React.Component {
     });
     xml.send()
   }
+
 
   handlePropClick(property) {
     this.setState({selectedProperty: property})

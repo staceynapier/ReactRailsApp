@@ -25,8 +25,8 @@ class Navigation extends React.Component {
     return (
       <section>
         <Nav bsStyle="pills" justified activeKey={this.state.activeKey} onSelect={this.handleSelect}>
-          <NavItem eventKey={1} href="#">Properties</NavItem>
-          <NavItem eventKey={2} href="#">Contact</NavItem>
+          <NavItem eventKey={1} >Properties</NavItem>
+          <NavItem eventKey={2} >Contact</NavItem>
         </Nav>
       </section>
     );

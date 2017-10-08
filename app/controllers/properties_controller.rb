@@ -4,7 +4,7 @@ class PropertiesController < ApplicationController
     params.require(:show).permit([:location, :bedrooms, :publicRooms, :bathrooms, :price, :description, :furnished, :images])
   end
 
-  def show
+  def index
     properties = Property.all
     render :json => properties
   end
