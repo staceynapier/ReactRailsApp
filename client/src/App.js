@@ -64,13 +64,11 @@ class App extends React.Component {
     if (this.state.selectedProperty !== null) {
       nodeToDisplay = <Details
         property={this.state.selectedProperty}
-        images={this.state.images}
-        imageXMlRequest={this.imageXMlRequest}/>
+        images={this.state.images}/>
     } else {
       nodeToDisplay = <PropList
         properties={this.state.properties}
-        handlePropClick={this.handlePropClick}
-        imageXMlRequest={this.imageXMlRequest}/>
+        handlePropClick={this.handlePropClick}/>
     }
 
     return (

@@ -20,7 +20,7 @@ class Property extends React.Component {
         <img
           className="list-image"
           alt="Property"
-          src={this.props.property.images}
+          src={this.props.property.images[0].address}
 
         />
         <h2>{this.props.property.location}</h2>
