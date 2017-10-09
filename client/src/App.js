@@ -4,6 +4,7 @@ import PropList from './PropList'
 import Details from './Details.js'
 import Navigation from './Navigation'
 import Contact from './Contact'
+import Filter from './Filter'
 
 
 class App extends React.Component {
@@ -13,11 +14,13 @@ class App extends React.Component {
     this.state = {
       properties: [],
       selectedProperty: null,
-      contact: false
+      contact: false,
+      filtered: false
     }
     this.handlePropClick = this.handlePropClick.bind(this)
     this.handleNavClick = this.handleNavClick.bind(this)
     this.handleContactClick = this.handleContactClick.bind(this)
+    this.handleFilterClick = this.handleFilterClick.bind(this)
   }
 
   componentDidMount(){
@@ -35,27 +38,45 @@ class App extends React.Component {
     xml.send()
   }
 
+  handleFilterClick() {
+    this.setState({
+      selectedProperty: null,
+      filtered: true,
+      contact: false
+      })
+  }
+
   handlePropClick(property) {
-    this.setState({selectedProperty: property})
+    this.setState({
+      selectedProperty: property,
+      filtered: false
+    })
   }
 
   handleNavClick() {
     this.setState({
       selectedProperty: null,
-      contact: false
+      contact: false,
+      filtered: false
     })
   }
 
   handleContactClick() {
     this.setState({
       selectedProperty: null,
-      contact: true
+      contact: true,
+      filtered: false
     })
   }
 
   render() {
 
     let nodeToDisplay = {}
+
+
+    if (this.state.filtered === true) {
+      nodeToDisplay = <Filter properties={this.state.properties}/>
+    } else
 
     if (this.state.contact === true) {
       nodeToDisplay = <Contact />
@@ -68,7 +89,8 @@ class App extends React.Component {
     } else {
       nodeToDisplay = <PropList
         properties={this.state.properties}
-        handlePropClick={this.handlePropClick}/>
+        handlePropClick={this.handlePropClick}
+        handleFilterClick={this.handleFilterClick}/>
     }
 
     return (

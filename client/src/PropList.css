@@ -3,3 +3,7 @@
   height: auto;
   padding: 1%
 }
+
+.filter-button {
+  align-items: right;
+}

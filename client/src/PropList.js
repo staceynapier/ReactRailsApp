@@ -1,9 +1,14 @@
 import React from 'react';
 import Property from './Property'
 import './PropList.css';
+import Filter from './Filter'
 
 
 class PropList extends React.Component {
+
+  handleFilterClick() {
+    this.props.handleFilterClick();
+  }
 
   render() {
     const list = this.props.properties.map( (property, index) => {
@@ -17,9 +22,12 @@ class PropList extends React.Component {
     })
 
     return (
-      <ul>
-        { list }
-      </ul>
+      <section>
+        <button className="filter-button" onClick={this.handleFilterClick.bind(this)}>Refine Results</button>
+        <ul>
+          { list }
+        </ul>
+      </section>
     )
   }
 }
