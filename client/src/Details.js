@@ -4,14 +4,16 @@ import './Details.css';
 
 class Details extends React.Component {
 
-  render(props) {
+  render() {
+
+    const list = this.props.property.images.map(( img, index ) => {
+      return(
+      <img src={img.address} key={index}/>
+    )
+    })
+
     return (
       <section>
-        <img
-          alt="Property"
-          src={this.props.property.images}
-          className="detail-image"
-        />
         <h2>{this.props.property.location}</h2><br/>
         <h4>Price: {this.props.property.price}</h4>
         <p>Bedrooms: {this.props.property.bedrooms}</p>
@@ -20,6 +22,9 @@ class Details extends React.Component {
         <p>Furnished: {this.props.property.furnished}</p>
         <p>Available From: {this.props.property.availableFrom}</p>
         <p>{this.props.property.description}</p>
+        <ul>
+          {list}
+        </ul>
       </section>
     )
   }

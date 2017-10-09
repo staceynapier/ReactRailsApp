@@ -8,6 +8,7 @@ class Property extends React.Component {
     this.handlePropClick = this.handlePropClick.bind(this)
   }
 
+
   handlePropClick() {
     this.props.handlePropClick(this.props.property)
     console.log("clicked");

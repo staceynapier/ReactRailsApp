@@ -8,7 +8,11 @@ class PropList extends React.Component {
   render() {
     const list = this.props.properties.map( (property, index) => {
       return (
-        <Property property={property} key={index} handlePropClick={this.props.handlePropClick}/>
+        <Property
+          property={property}
+          key={index}
+          handlePropClick={this.props.handlePropClick}
+        />
       )
     })
 
