@@ -1,8 +1,6 @@
 import React from 'react';
 import Property from './Property'
 import './PropList.css';
-import Filter from './Filter'
-
 
 class PropList extends React.Component {
 

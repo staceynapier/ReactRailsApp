@@ -13,6 +13,7 @@ class App extends React.Component {
     super()
     this.state = {
       properties: [],
+      filteredProperties: null,
       selectedProperty: null,
       contact: false,
       filtered: false
@@ -21,6 +22,7 @@ class App extends React.Component {
     this.handleNavClick = this.handleNavClick.bind(this)
     this.handleContactClick = this.handleContactClick.bind(this)
     this.handleFilterClick = this.handleFilterClick.bind(this)
+    this.handleFormSubmit = this.handleFormSubmit.bind(this)
   }
 
   componentDidMount(){
@@ -69,13 +71,22 @@ class App extends React.Component {
     })
   }
 
+  handleFormSubmit(properties) {
+    this.setState({
+      selectedProperty: null,
+      contact: false,
+      filtered: false,
+      filteredProperties: properties
+    })
+  }
+
   render() {
 
     let nodeToDisplay = {}
 
 
     if (this.state.filtered === true) {
-      nodeToDisplay = <Filter properties={this.state.properties}/>
+      nodeToDisplay = <Filter properties={this.state.properties} handleFormSubmit={this.handleFormSubmit}/>
     } else
 
     if (this.state.contact === true) {
@@ -86,7 +97,16 @@ class App extends React.Component {
       nodeToDisplay = <Details
         property={this.state.selectedProperty}
         images={this.state.images}/>
-    } else {
+    } else
+
+    if (this.state.filteredProperties !== null) {
+      nodeToDisplay = <PropList
+        properties={this.state.filteredProperties}
+        handlePropClick={this.handlePropClick}
+        handleFilterClick={this.handleFilterClick}/>
+    } else
+
+    {
       nodeToDisplay = <PropList
         properties={this.state.properties}
         handlePropClick={this.handlePropClick}

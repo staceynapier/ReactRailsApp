@@ -8,7 +8,7 @@ class Details extends React.Component {
 
     const list = this.props.property.images.map(( img, index ) => {
       return(
-      <img src={img.address} key={index}/>
+      <img src={img.address} key={index} alt="property"/>
     )
     })
 
