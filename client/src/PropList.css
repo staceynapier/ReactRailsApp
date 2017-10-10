@@ -1,17 +1,25 @@
 .list-image {
   max-width: 50%;
   height: auto;
-  padding: 1%
+  padding: 1%;
+  box-shadow: 2px 2px 1px blue;
+
 }
 
 .filter-button {
   align-items: right;
+  box-shadow: 2px 2px 1px 1px green;
+  padding: 6px;
 }
 
 ul {
     padding-left: 20px;
     padding-right: 20px;
   }
+
+button {
+  box-shadow: 2px 2px 1px 1px white;
+}
     /*opacity: 0
     animation: fadeIn 0.5s linear;
     animation-fill-mode: both;

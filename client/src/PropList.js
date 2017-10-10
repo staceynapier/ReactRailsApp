@@ -15,7 +15,8 @@ class PropList extends React.Component {
           property={property}
           key={index}
           handlePropClick={this.props.handlePropClick}
-          className="animated fadeInUpBig"
+          className="animated flipInX"
+          id="property"
         />
       )
     })

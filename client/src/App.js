@@ -5,6 +5,7 @@ import Details from './Details.js'
 import Navigation from './Navigation'
 import Contact from './Contact'
 import Filter from './Filter'
+import Footer from './Footer'
 
 
 class App extends React.Component {
@@ -96,7 +97,8 @@ class App extends React.Component {
     if (this.state.selectedProperty !== null) {
       nodeToDisplay = <Details
         property={this.state.selectedProperty}
-        images={this.state.images}/>
+        images={this.state.images}
+        className="animated fadeInUpBig"/>
     } else
 
     if (this.state.filteredProperties !== null) {
@@ -104,28 +106,36 @@ class App extends React.Component {
         properties={this.state.filteredProperties}
         handlePropClick={this.handlePropClick}
         handleFilterClick={this.handleFilterClick}
-        className="prop-list"/>
+        className="animated bounceInUp"/>
     } else
 
     {
       nodeToDisplay = <PropList
         properties={this.state.properties}
         handlePropClick={this.handlePropClick}
-        handleFilterClick={this.handleFilterClick}/>
+        handleFilterClick={this.handleFilterClick}
+        className="animated bounceInUp"/>
     }
 
     return (
       <main className="App">
+
         <h2>Title</h2>
 
         <section className="navigation">
             <Navigation handleNavClick={this.handleNavClick} handleContactClick={this.handleContactClick}/>
         </section>
 
-        <section className="prop-list">
+        <section className="main-content">
             { nodeToDisplay }
         </section>
+
+        <footer>
+          <Footer className="footer"/>
+        </footer>
+
       </main>
+
     );
   }
 }

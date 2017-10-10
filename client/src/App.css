@@ -1,5 +1,32 @@
+html {
+    height: 100%;
+}
+
 body {
   text-align: center;
-  background-color: #103570;
-  color: white;
+  background-color: white;
+  color: green;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.active {
+  box-shadow: 2px 2px 1px 1px 1px white;
+}
+
+.footer {
+  max-width: 99%;
+  height: auto;
+  padding: 5%;
+  flex: 0 0 auto;
+}
+
+.navigation {
+  flex: 0 0 auto;
+  position: top fixed;
+}
+
+.main-content {
+  flex: 1 0 auto;
 }

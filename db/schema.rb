@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171008154400) do
+ActiveRecord::Schema.define(version: 20171010131721) do
 
   create_table "images", force: :cascade do |t|
     t.string   "address"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20171008154400) do
     t.integer  "bedrooms"
     t.integer  "publicRooms"
     t.integer  "bathrooms"
-    t.string   "price"
+    t.integer  "price"
     t.string   "description"
     t.string   "furnished"
     t.datetime "availableFrom"
