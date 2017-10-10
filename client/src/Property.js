@@ -16,7 +16,7 @@ class Property extends React.Component {
 
   render(props) {
     return (
-      <article onClick={this.handlePropClick} className="animated fadeInUpBig">
+      <article onClick={this.handlePropClick} className="animated bounceInUp">
         <img
           className="list-image"
           alt="Property"
