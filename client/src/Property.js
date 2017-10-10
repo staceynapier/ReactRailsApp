@@ -26,7 +26,7 @@ class Property extends React.Component {
         <h2>{this.props.property.location}</h2>
         <p>Bedrooms: {this.props.property.bedrooms}</p>
         <p>Bathrooms: {this.props.property.bathrooms}</p>
-        <p>Price: {this.props.property.price}</p>
+        <p>Price: £{this.props.property.price} pcm</p>
       </article>
     )
   }

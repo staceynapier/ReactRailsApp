@@ -9,13 +9,20 @@ class Filter extends React.Component {
     this.state = {
       filterByRoom: '',
     }
-    this.handleChange = this.handleChange.bind(this)
+    this.handleRoomChange = this.handleRoomChange.bind(this)
+    this.handlePriceChange = this.handlePriceChange.bind(this)
     this.handleFilterSubmit= this.handleFilterSubmit.bind(this)
   }
 
-  handleChange(e) {
+  handleRoomChange(e) {
     this.setState({
       filterByRoom: e.target.value
+    })
+  }
+
+  handlePriceChange(e) {
+    this.setState({
+      filterByPrice: e.target.value
     })
   }
 
@@ -24,7 +31,7 @@ class Filter extends React.Component {
     const newArray = []
 
     this.props.properties.map((property, index) => {
-      if (property.bedrooms >= this.state.filterByRoom) {
+      if (property.bedrooms >= this.state.filterByRoom && property.price >= this.state.filterByPrice){
         newArray.push(property)
       }
       return(newArray)
@@ -38,21 +45,21 @@ class Filter extends React.Component {
     return(
 
         <Form horizontal>
-          {/* <FormGroup>
+          <FormGroup>
             <Col>
               Price
             </Col>
             <Col sm={10}>
-              <FormControl type="text" placeholder="£" value={this.state.filterByPrice} handleChange={this.handleChange}/>
+              <FormControl type="text" placeholder="£" value={this.state.filterByPrice} onChange={this.handlePriceChange}/>
             </Col>
-          </FormGroup> */}
+          </FormGroup>
 
           <FormGroup>
             <Col>
               No of Bedrooms
             </Col>
             <Col sm={10}>
-              <FormControl type="text" value={this.state.filterByRoom} onChange={this.handleChange}/>
+              <FormControl type="text" value={this.state.filterByRoom} onChange={this.handleRoomChange}/>
             </Col>
           </FormGroup>
 
