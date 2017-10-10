@@ -59,7 +59,8 @@ class App extends React.Component {
     this.setState({
       selectedProperty: null,
       contact: false,
-      filtered: false
+      filtered: false,
+      filteredProperties: null
     })
   }
 
@@ -84,7 +85,6 @@ class App extends React.Component {
 
     let nodeToDisplay = {}
 
-
     if (this.state.filtered === true) {
       nodeToDisplay = <Filter properties={this.state.properties} handleFormSubmit={this.handleFormSubmit}/>
     } else
@@ -103,7 +103,8 @@ class App extends React.Component {
       nodeToDisplay = <PropList
         properties={this.state.filteredProperties}
         handlePropClick={this.handlePropClick}
-        handleFilterClick={this.handleFilterClick}/>
+        handleFilterClick={this.handleFilterClick}
+        className="prop-list"/>
     } else
 
     {
@@ -116,9 +117,11 @@ class App extends React.Component {
     return (
       <main className="App">
         <h2>Title</h2>
+
         <section className="navigation">
-          <Navigation handleNavClick={this.handleNavClick} handleContactClick={this.handleContactClick}/>
+            <Navigation handleNavClick={this.handleNavClick} handleContactClick={this.handleContactClick}/>
         </section>
+
         <section className="prop-list">
             { nodeToDisplay }
         </section>

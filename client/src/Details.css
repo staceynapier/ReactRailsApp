@@ -3,3 +3,8 @@
   height: auto;
   padding: 1%;
 }
+
+.full-image {
+  max-width: 100%;
+  max-height: 100%;
+}

@@ -7,3 +7,25 @@
 .filter-button {
   align-items: right;
 }
+
+ul {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+    /*opacity: 0
+    animation: fadeIn 0.5s linear;
+    animation-fill-mode: both;
+}
+
+.nav {
+  background-color: red;
+  ;
+  padding: 5px;
+  text-align: center;
+  transition: opacity 1s;
+  width: 100%;
+}
+
+.nav--hidden {
+  opacity: 0;
+}*/

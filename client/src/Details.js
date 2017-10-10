@@ -4,11 +4,21 @@ import './Details.css';
 
 class Details extends React.Component {
 
+  handleImageClick(e) {
+    document.getElementById('detail-image').classList.toggle('full-image');
+  }
+
   render() {
 
     const list = this.props.property.images.map(( img, index ) => {
       return(
-      <img src={img.address} key={index} alt="property"/>
+      <img
+        src={img.address}
+        key={index}
+        alt="property"
+        className="detail-image"
+        id="detail-image"
+        onClick={this.handleImageClick}/>
     )
     })
 
