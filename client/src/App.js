@@ -7,7 +7,7 @@ import Contact from './Contact'
 import Filter from './Filter'
 import Footer from './Footer'
 import edinburgh from './edinburgh.jpg'
-import About from './About'
+import About from './About';
 
 
 class App extends React.Component {
@@ -26,6 +26,7 @@ class App extends React.Component {
     this.handleNavClick = this.handleNavClick.bind(this)
     this.handleContactClick = this.handleContactClick.bind(this)
     this.handleFilterClick = this.handleFilterClick.bind(this)
+    this.handleAboutClick = this.handleAboutClick.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
   }
 
@@ -102,16 +103,16 @@ class App extends React.Component {
 
     let nodeToDisplay = {}
 
-    if (this.state.about === true) {
-      nodeToDisplay = <About />
-    } else
-
     if (this.state.filtered === true) {
       nodeToDisplay = <Filter properties={this.state.properties} handleFormSubmit={this.handleFormSubmit}/>
     } else
 
     if (this.state.contact === true) {
       nodeToDisplay = <Contact />
+    } else
+
+    if (this.state.about === true) {
+      nodeToDisplay = <About />
     } else
 
     if (this.state.selectedProperty !== null) {
@@ -134,7 +135,7 @@ class App extends React.Component {
         properties={this.state.properties}
         handlePropClick={this.handlePropClick}
         handleFilterClick={this.handleFilterClick}
-    />
+      />
     }
 
     return (

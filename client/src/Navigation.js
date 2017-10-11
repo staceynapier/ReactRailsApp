@@ -20,13 +20,14 @@ class Navigation extends React.Component {
       this.props.handleNavClick()
     } else {
       this.props.handleAboutClick()
+
     }
   }
 
   render() {
     return (
       <section>
-        <Navbar inverse collapseOnSelect justified>
+        <Navbar inverse collapseOnSelect >
           <Navbar.Header>
             Snappier Properties
             <Navbar.Toggle />
