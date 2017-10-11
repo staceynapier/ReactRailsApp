@@ -7,6 +7,7 @@ import Contact from './Contact'
 import Filter from './Filter'
 import Footer from './Footer'
 import edinburgh from './edinburgh.jpg'
+import About from './About'
 
 
 class App extends React.Component {
@@ -18,7 +19,8 @@ class App extends React.Component {
       filteredProperties: null,
       selectedProperty: null,
       contact: false,
-      filtered: false
+      filtered: false,
+      about: false
     }
     this.handlePropClick = this.handlePropClick.bind(this)
     this.handleNavClick = this.handleNavClick.bind(this)
@@ -46,7 +48,8 @@ class App extends React.Component {
     this.setState({
       selectedProperty: null,
       filtered: true,
-      contact: false
+      contact: false,
+      about: false
       })
   }
 
@@ -62,7 +65,8 @@ class App extends React.Component {
       selectedProperty: null,
       contact: false,
       filtered: false,
-      filteredProperties: null
+      filteredProperties: null,
+      about: false
     })
   }
 
@@ -70,7 +74,17 @@ class App extends React.Component {
     this.setState({
       selectedProperty: null,
       contact: true,
-      filtered: false
+      filtered: false,
+      about: false
+    })
+  }
+
+  handleAboutClick() {
+    this.setState({
+      selectedProperty: null,
+      contact: null,
+      filtered: false,
+      about: true
     })
   }
 
@@ -79,13 +93,18 @@ class App extends React.Component {
       selectedProperty: null,
       contact: false,
       filtered: false,
-      filteredProperties: properties
+      filteredProperties: properties,
+      about: false
     })
   }
 
   render() {
 
     let nodeToDisplay = {}
+
+    if (this.state.about === true) {
+      nodeToDisplay = <About />
+    } else
 
     if (this.state.filtered === true) {
       nodeToDisplay = <Filter properties={this.state.properties} handleFormSubmit={this.handleFormSubmit}/>
@@ -122,7 +141,10 @@ class App extends React.Component {
       <main className="App">
 
         <section className="navigation">
-            <Navigation handleNavClick={this.handleNavClick} handleContactClick={this.handleContactClick}/>
+            <Navigation
+              handleNavClick={this.handleNavClick}
+              handleContactClick={this.handleContactClick}
+              handleAboutClick={this.handleAboutClick}/>
         </section>
 
         {/* <section className="animated fadeInUpBig">

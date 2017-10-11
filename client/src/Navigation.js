@@ -16,8 +16,10 @@ class Navigation extends React.Component {
     this.setState({activeKey: selectedKey})
     if (selectedKey === 2) {
       this.props.handleContactClick()
-    } else {
+    } else if (selectedKey === 1) {
       this.props.handleNavClick()
+    } else {
+      this.props.handleAboutClick()
     }
   }
 
@@ -33,6 +35,7 @@ class Navigation extends React.Component {
               <Nav activeKey={this.state.activeKey} onSelect={this.handleSelect}>
                 <NavItem eventKey={1} >Home</NavItem>
                 <NavItem eventKey={2} >Contact</NavItem>
+                <NavItem eventKey={3} >About</NavItem>
               </Nav>
             </Navbar.Collapse>
         </Navbar>
