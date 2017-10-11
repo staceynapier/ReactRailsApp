@@ -11,8 +11,23 @@ body {
   flex-direction: column;
   height: 90%;
   padding: 1%;
-  font-family: monospace;
+  font-family: 'Muli', sans-serif;
 
+}
+
+@media screen and (max-width : 300px)
+{
+  .list-description
+  {
+    font-size: 0.8em;;
+  }
+}
+@media screen and (max-width : 350px)
+{
+  .list-description
+  {
+    font-size: 1.2em;
+  }
 }
 
 .active {
@@ -48,7 +63,11 @@ body {
 }
 
 .navbar-header {
-  font-size: 1.5em;
+  font-size: 1.8em;
+}
+
+.navbar-toggle {
+  margin-top: 0px;
 }
 
 .navbar-inverse {
@@ -84,6 +103,15 @@ navbar.less:579
 
 .navbar {
   margin-bottom: 0px;
+}
+
+.navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+    border-radius: 4px;
+    float: right;
+    width: 95%;
 }
 
 
@@ -153,5 +181,5 @@ button {
 .footer-image {
   height: auto;
   max-height: 10em;
-  max-width: 100%;
+  width: 97%;
 }

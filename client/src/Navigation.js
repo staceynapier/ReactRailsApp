@@ -24,11 +24,7 @@ class Navigation extends React.Component {
   render() {
     return (
       <section>
-        {/* <Nav bsStyle="tabs" justified activeKey={this.state.activeKey} onSelect={this.handleSelect}>
-          <NavItem eventKey={1} >Home</NavItem>
-          <NavItem eventKey={2} >Contact</NavItem>
-        </Nav> */}
-        <Navbar inverse collapseOnSelect>
+        <Navbar inverse collapseOnSelect justified>
           <Navbar.Header>
             Snappier Properties
             <Navbar.Toggle />

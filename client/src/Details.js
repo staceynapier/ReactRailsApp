@@ -25,13 +25,13 @@ class Details extends React.Component {
     return (
       <section>
         <h2>{this.props.property.location}</h2><br/>
-        <h4>Price: £{this.props.property.price} pcm</h4>
+        <p>{this.props.property.description}</p>
+        <p>Price: £{this.props.property.price} pcm</p>
         <p>Bedrooms: {this.props.property.bedrooms}</p>
         <p>Bathrooms: {this.props.property.bathrooms}</p>
         <p>Public Rooms: {this.props.property.publicRooms}</p>
         <p>Furnished: {this.props.property.furnished}</p>
         <p>Available From: {this.props.property.availableFrom}</p>
-        <p>{this.props.property.description}</p>
         <ul>
           {list}
         </ul>
