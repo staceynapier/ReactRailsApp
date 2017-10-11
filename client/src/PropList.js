@@ -1,11 +1,15 @@
 import React from 'react';
 import Property from './Property'
 import './PropList.css';
+import './App.css';
+import filter from './filter.png'
+
 
 class PropList extends React.Component {
 
   handleFilterClick() {
     this.props.handleFilterClick();
+    console.log("Click");
   }
 
   render() {
@@ -15,7 +19,7 @@ class PropList extends React.Component {
           property={property}
           key={index}
           handlePropClick={this.props.handlePropClick}
-          className="animated flipInX"
+          className="flex-item"
           id="property"
         />
       )
@@ -23,8 +27,10 @@ class PropList extends React.Component {
 
     return (
       <section>
-        <button className="filter-button" onClick={this.handleFilterClick.bind(this)}>Refine Results</button>
-        <ul>
+        <button className="filter-button" onClick={this.handleFilterClick.bind(this)}>
+          <img className="filter-img" src={filter} alt="filter"/>
+        </button>
+        <ul className="flex-container">
           { list }
         </ul>
       </section>

@@ -106,7 +106,7 @@ class App extends React.Component {
         properties={this.state.filteredProperties}
         handlePropClick={this.handlePropClick}
         handleFilterClick={this.handleFilterClick}
-        className="animated bounceInUp"/>
+      />
     } else
 
     {
@@ -114,15 +114,14 @@ class App extends React.Component {
         properties={this.state.properties}
         handlePropClick={this.handlePropClick}
         handleFilterClick={this.handleFilterClick}
-        className="animated bounceInUp"/>
+    />
     }
 
     return (
       <main className="App">
 
-        <h2>Title</h2>
-
         <section className="navigation">
+            <h2>Props</h2>
             <Navigation handleNavClick={this.handleNavClick} handleContactClick={this.handleContactClick}/>
         </section>
 
@@ -130,8 +129,8 @@ class App extends React.Component {
             { nodeToDisplay }
         </section>
 
-        <footer>
-          <Footer className="footer"/>
+        <footer  className="footer">
+          <Footer/>
         </footer>
 
       </main>

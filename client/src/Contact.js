@@ -1,3 +1,6 @@
+import './App.css';
+import './Contact.css';
+
 import React from 'react';
 
 class Contact extends React.Component {

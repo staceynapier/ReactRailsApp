@@ -1,6 +1,6 @@
 import React from 'react';
 import './Details.css';
-
+import './App.css';
 
 class Details extends React.Component {
 
@@ -25,7 +25,7 @@ class Details extends React.Component {
     return (
       <section>
         <h2>{this.props.property.location}</h2><br/>
-        <h4>Price: {this.props.property.price}</h4>
+        <h4>Price: £{this.props.property.price} pcm</h4>
         <p>Bedrooms: {this.props.property.bedrooms}</p>
         <p>Bathrooms: {this.props.property.bathrooms}</p>
         <p>Public Rooms: {this.props.property.publicRooms}</p>
