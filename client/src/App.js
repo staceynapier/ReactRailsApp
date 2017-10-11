@@ -6,6 +6,7 @@ import Navigation from './Navigation'
 import Contact from './Contact'
 import Filter from './Filter'
 import Footer from './Footer'
+import edinburgh from './edinburgh.jpg'
 
 
 class App extends React.Component {
@@ -121,9 +122,12 @@ class App extends React.Component {
       <main className="App">
 
         <section className="navigation">
-            <h2>Props</h2>
             <Navigation handleNavClick={this.handleNavClick} handleContactClick={this.handleContactClick}/>
         </section>
+
+        {/* <section className="animated fadeInUpBig">
+            <img src={edinburgh} className="main-image" />
+        </section> */}
 
         <section className="main-content">
             { nodeToDisplay }

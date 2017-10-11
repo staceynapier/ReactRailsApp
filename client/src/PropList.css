@@ -1,12 +1,11 @@
 .list-image {
-  max-width: 51%;
+  max-width: 40%;
   height: auto;
   padding-bottom: 1em;
   padding-top: 0.5em;
   float: left;
   max-height: 30%;
-  box-shadow: 0px 1px 10px 0px #FF5722;
-
+  box-shadow: 2px 2px 5px 0px #FF5722;
 }
   /*max-height: 30%;
   padding-top: 6%;

@@ -26,7 +26,7 @@ class PropList extends React.Component {
     })
 
     return (
-      <section>
+      <section className="animated fadeInUpBig">
         <button className="filter-button" onClick={this.handleFilterClick.bind(this)}>
           <img className="filter-img" src={filter} alt="filter"/>
         </button>

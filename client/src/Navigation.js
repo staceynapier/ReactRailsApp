@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, NavItem } from 'react-bootstrap';
+import { Nav, NavItem, Navbar, } from 'react-bootstrap';
 
 class Navigation extends React.Component {
 
@@ -24,10 +24,22 @@ class Navigation extends React.Component {
   render() {
     return (
       <section>
-        <Nav bsStyle="pills" activeKey={this.state.activeKey} onSelect={this.handleSelect}>
-          <NavItem eventKey={1} >Properties</NavItem>
+        {/* <Nav bsStyle="tabs" justified activeKey={this.state.activeKey} onSelect={this.handleSelect}>
+          <NavItem eventKey={1} >Home</NavItem>
           <NavItem eventKey={2} >Contact</NavItem>
-        </Nav>
+        </Nav> */}
+        <Navbar inverse collapseOnSelect>
+          <Navbar.Header>
+            Snappier Properties
+            <Navbar.Toggle />
+          </Navbar.Header>
+            <Navbar.Collapse>
+              <Nav activeKey={this.state.activeKey} onSelect={this.handleSelect}>
+                <NavItem eventKey={1} >Home</NavItem>
+                <NavItem eventKey={2} >Contact</NavItem>
+              </Nav>
+            </Navbar.Collapse>
+        </Navbar>
       </section>
     );
   }
